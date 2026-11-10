@@ -23,4 +23,17 @@ app.use(express.static("public"))
 // server read n perform the CRUD on cookie(Parses incoming cookies)
 app.use(cookieParser())
 
+
+//  Routes Import
+
+import userRouter from './routes/user.routes.js'
+
+
+// routes declaration, we are taking middleware here bcoz files are seperates so we are using app.use method instead of app.get(for the same file)
+
+app.use("/api/v1/users" , userRouter)
+//  app.use(path, middleware);  First argument: Base URL.
+// Second argument: Middleware or Express Router
+
+//  http: // localhost:8000/api/v1/users/register
 export default app
