@@ -27,8 +27,5 @@ return response
  fs.unlinkSync(localFilePath) // remove the locallysave temporary file as the upload opeartion got failed
  return null;
 }}
-
-
-
-    
-    export default uploadOnCloudinary
+  
+    export  {uploadOnCloudinary}

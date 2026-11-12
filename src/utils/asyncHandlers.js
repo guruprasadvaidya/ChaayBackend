@@ -7,7 +7,7 @@ const asyncHandler = (requestHandler) => {
 
 
 
-export default asyncHandler
+export  {asyncHandler}
 
 
 // this is a wrapper function, which is reusable and made with try and catch(can also be done with promises .then and catch mentioned above)
