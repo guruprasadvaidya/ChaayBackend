@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 
+// Middlewares
 // use methods used for all the middlewares and configurations
 app.use(cors ({
     origin: process.env.CORS_ORIGIN,
@@ -30,10 +31,17 @@ import userRouter from './routes/user.routes.js'
 
 
 // routes declaration, we are taking middleware here bcoz files are seperates so we are using app.use method instead of app.get(for the same file)
+app.use((req, res, next) => {
+    console.log("Incoming Request:", req.method, req.originalUrl);
+    next();
+});
 
 app.use("/api/v1/users" , userRouter)
 //  app.use(path, middleware);  First argument: Base URL.
 // Second argument: Middleware or Express Router
 
 //  http: // localhost:8000/api/v1/users/register
+
+
+
 export default app
